@@ -29,7 +29,6 @@ export const Register = (props) => {
         values.imageURL = fileUrl
     }
 
-    console.log(values)
 
     
     const [addUser, {loading}] = useMutation(REGISTER_USER, {

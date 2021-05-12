@@ -34,10 +34,7 @@ export const ResetPassword = (props) => {
             setErrors(err.graphQLErrors[0].extensions.exception.errors)
             console.log(err)
         }
-    });
-
-    console.log(errors)
-      
+    });      
     
     function resetPasswordCallback(){
         resetPassword();
