@@ -4,7 +4,7 @@ import {ApolloClient, InMemoryCache, createHttpLink, ApolloProvider} from '@apol
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-    uri: 'https://desolate-bastion-84066.herokuapp.com/' 
+    uri: 'https://desolate-bastion-84066.herokuapp.com/' })
 
 const authLink = setContext(() => {
     const token = localStorage.getItem("jwtToken");
