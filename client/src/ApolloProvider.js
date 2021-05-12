@@ -4,7 +4,7 @@ import {ApolloClient, InMemoryCache, createHttpLink, ApolloProvider} from '@apol
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:5000' //REPLACE THIS FOR DEPLOYMENT
+    uri: 'https://desolate-bastion-84066.herokuapp.com/' //REPLACE THIS FOR DEPLOYMENT
 });
 
 const authLink = setContext(() => {
