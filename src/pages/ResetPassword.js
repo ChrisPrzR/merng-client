@@ -14,6 +14,8 @@ export const ResetPassword = (props) => {
     //add confirmation when new user is sent
 
     const [errors, setErrors] = useState({})
+    const [isSent, setIsSent] = useState(false)
+
 
     const token = props.match.params.resetId;
 
@@ -33,7 +35,11 @@ export const ResetPassword = (props) => {
         onError(err){
             setErrors(err.graphQLErrors[0].extensions.exception.errors)
             console.log(err)
-        }
+        },
+        onCompleted(){
+        setIsSent(true)
+        
+      } 
     });      
     
     function resetPasswordCallback(){
@@ -86,6 +92,11 @@ export const ResetPassword = (props) => {
                 </ul>
             </div>   
             )}
+            {
+                isSent && (
+                <div className="ui success message">Password succesfully changed</div>
+            )
+      }
         </div>
     )
 }
